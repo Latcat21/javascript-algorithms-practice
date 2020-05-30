@@ -36,6 +36,7 @@ function fizzBuzz(){
 
 ///////// Factorialize a number /////////////////////////
 
+// solution 1
 function factorialize(num){
   
   if( num === 0 ){
@@ -59,10 +60,26 @@ function factorialize(num){
 
 function factorializeNumber(num){
   let product = 1;
-  
+
   for(let i = 1; i <= num ; i++){
     product *= i
   }
   return product;
 }
 
+///////// Reverse a string /////////////////////////
+
+//solution 1
+function revString(str){
+  return str.split('').reverse().join('')
+}
+
+function reverseString(str){
+  let newStr = ''
+  for(let i = str.length - 1; i >= 0 ; i--){
+    newStr += str[i]
+  }
+  return newStr;
+}
+
+console.log(reverseString('brian'))
