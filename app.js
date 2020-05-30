@@ -19,7 +19,7 @@ function fizzBuzz(){
   for(let i = 1 ; i < 101 ; i++){
    
     if( i % 15 === 0){
-      console.log('fizzbuxx')
+      console.log('fizzbuzz')
     }
     else if( i % 3 === 0){
      console.log('fizz')
@@ -32,4 +32,37 @@ function fizzBuzz(){
   }
 }
 
-console.log(fizzBuzz())
+// console.log(fizzBuzz())
+
+///////// Factorialize a number /////////////////////////
+
+function factorialize(num){
+  
+  if( num === 0 ){
+    return 1
+  }
+
+  let sum = [];
+
+  for( let i = 1 ; i <= num ; i++ ){
+    sum.push(i)
+  }
+
+  let final = sum.reduce((a,b) => {
+    return a * b;
+  })
+
+  return final;
+}
+
+// solution 2 ///
+
+function factorializeNumber(num){
+  let product = 1;
+  
+  for(let i = 1; i <= num ; i++){
+    product *= i
+  }
+  return product;
+}
+
