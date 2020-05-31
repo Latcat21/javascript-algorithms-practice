@@ -96,13 +96,14 @@ function isPalindrome(str){
 function longestWord(str){
   let wordArr = str.split(' ');
   let count = 0;
+  let final = ''
   
   for(let i = 0 ; i < wordArr.length; i++){
     if(count <= wordArr[i].length){
       count = wordArr[i].length
     }
   }
-  let final = ''
+  
   wordArr.forEach((word) => {
     if(word.length === count){
       final += word
@@ -112,4 +113,20 @@ function longestWord(str){
 
   return final
 }
-console.log(longestWord('i am a coding god'))
+
+///////////////// repeat string //////////
+
+function repeatStr(str, num){
+
+  let final = ''
+  let i = 0;
+  while(i < num){
+    final += str;
+    i++
+  }
+
+
+  console.log(final)
+
+}
+console.log(repeatStr('google', 3))
