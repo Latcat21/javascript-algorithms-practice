@@ -74,6 +74,7 @@ function revString(str){
   return str.split('').reverse().join('')
 }
 
+// solution 2
 function reverseString(str){
   let newStr = ''
   for(let i = str.length - 1; i >= 0 ; i--){
@@ -82,4 +83,17 @@ function reverseString(str){
   return newStr;
 }
 
-console.log(reverseString('brian'))
+
+////////////////  palindrome /////////////
+function isPalindrome(str){
+   let forwardStr = str.toLowerCase();
+   let reversedStr;
+
+   forwardStr = forwardStr.replace(/[\W_]/g, '');
+   reversedStr = forwardStr.split('').reverse().join('');
+
+
+
+   return forwardStr === reversedStr;
+}
+console.log(isPalindrome('hi my name is brian '))
