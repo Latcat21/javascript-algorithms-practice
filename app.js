@@ -119,14 +119,20 @@ function longestWord(str){
 function repeatStr(str, num){
 
   let final = ''
-  let i = 0;
-  while(i < num){
+  
+  while(num > 0){
     final += str;
-    i++
+    num--
   }
 
 
-  console.log(final)
+  return final
 
 }
-console.log(repeatStr('google', 3))
+/////////////////is digit /////////
+function isDigit(str){
+   const digitArr = ['0', '1','2','3','4', '6','7', '8','9'];
+  
+   return  digitArr.includes(str);
+
+}
