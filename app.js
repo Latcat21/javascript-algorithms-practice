@@ -86,14 +86,30 @@ function reverseString(str){
 
 ////////////////  palindrome /////////////
 function isPalindrome(str){
-   let forwardStr = str.toLowerCase();
-   let reversedStr;
+   let forwardStr = str.toLowerCase().replace(/[\W_]/g, '');
+   let reversedStr = forwardStr.split('').reverse().join('');
 
-   forwardStr = forwardStr.replace(/[\W_]/g, '');
-   reversedStr = forwardStr.split('').reverse().join('');
-
-
-
-   return forwardStr === reversedStr;
+  return forwardStr === reversedStr;
 }
-console.log(isPalindrome('hi my name is brian '))
+
+////////////// Longest Word /////////////
+function longestWord(str){
+  let wordArr = str.split(' ');
+  let count = 0;
+  
+  for(let i = 0 ; i < wordArr.length; i++){
+    if(count <= wordArr[i].length){
+      count = wordArr[i].length
+    }
+  }
+  let final = ''
+  wordArr.forEach((word) => {
+    if(word.length === count){
+      final += word
+    }
+  })
+  
+
+  return final
+}
+console.log(longestWord('i am a coding god'))
