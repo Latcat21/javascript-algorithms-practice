@@ -114,6 +114,21 @@ function longestWord(str){
   return final
 }
 
+
+// solution 2
+function largestWord(str){
+  let filteredArray = str.replace(/[\W_]/g, ' ').split(' ');
+  let largest = '';
+
+  filteredArray.forEach((word) =>{
+    largest = word.length > largest.length ? word : largest;
+  })
+
+  return largest
+}
+
+
+
 ///////////////// repeat string //////////
 
 function repeatStr(str, num){
@@ -136,3 +151,22 @@ function isDigit(str){
    return  digitArr.includes(str);
 
 }
+
+
+////////////////  VALID TIME ///////////////////
+function validTime(str){
+  let newArr = str.split(':');
+  let firstHalf = parseInt(newArr.slice(0,1))
+  let secondHalf = parseInt(newArr.slice(1));
+
+  if(firstHalf < 24 && firstHalf > 0 && secondHalf < 59 && secondHalf >= 0){
+    return true
+  }else{
+    return false
+  }
+  
+ 
+
+}
+
+console.log(validTime('22:00'));
