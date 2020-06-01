@@ -341,12 +341,15 @@ function uniqueValues(arr1, arr2){
 }
 /// add up digits (29) = 11
 function addDigits(num){
-  let numArr = num.toString().split('')
-  let sum = 0;
-  for(let i = 0; i < numArr.length; i++){
-    sum += parseInt(numArr[i])
-  }
-  return sum
+  // let numArr = num.toString().split('')
+  // let sum = 0;
+  // for(let i = 0; i < numArr.length; i++){
+  //   sum += parseInt(numArr[i])
+  // }
+  // return sum
+  return num.toString().split('').reduce((num1, num2) => {
+    return parseInt(num1) + parseInt(num2);
+  })
  
 }
 console.log(addDigits(29))
