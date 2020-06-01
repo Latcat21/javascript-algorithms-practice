@@ -234,3 +234,51 @@ function sumDigits(str){
 }
 
 
+///////////first set of duplicates [2,3,3,1,5,2] = 3
+
+function firstDuplicate(arr){
+  let final = []
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === arr[i + 1]){
+       final.push(arr[i])
+      }
+    }
+
+    if(final[0]){
+      return final[0]
+    }else{
+      return -1;
+    }
+  
+}
+
+
+///// solution 2
+function firstDuplicate2(numArray){
+  let duplicateObject = {};
+
+  for (let num of numArray){
+    if(duplicateObject.hasOwnProperty(num)){
+      return num
+    }
+    duplicateObject[num] = num;
+  }
+
+  return -1;
+  
+}
+
+///////// no space string converter CodingGodDoesWorkSon = coding god does work son
+
+function stringSpacer(str){
+  let stringArray = str.split('');
+  for(let i = 0; i < stringArray.length; i++){
+    if(stringArray[i] !== stringArray[i].toLowerCase()){
+      stringArray[i] = stringArray[i].toLowerCase();
+      stringArray.splice(i, 0, ' ');
+    }
+  }
+
+  return stringArray.join('').trim('')
+}
+console.log(stringSpacer('CodingGodDoesWorkSon'))
