@@ -134,16 +134,13 @@ function largestWord(str){
 function repeatStr(str, num){
 
   let final = ''
-  
   while(num > 0){
     final += str;
     num--
   }
-
-
   return final
-
 }
+
 /////////////////is digit /////////
 function isDigit(str){
    const digitArr = ['0', '1','2','3','4', '6','7', '8','9'];
@@ -165,11 +162,6 @@ function validTime(str){
   }else{
     return false
   }
-
- 
-  
- 
-
 }
 
 //// solution 2
@@ -186,6 +178,7 @@ function isValidTime(time){
   return true;
 }
 
+//////// missing number in array
 
 function missingNum(arr){
   const numberArray = arr.sort((num1, num2) => {
@@ -200,4 +193,19 @@ function missingNum(arr){
  
 }
 
-console.log(missingNum([0,3,5,8,4,6,1,9,7]));
+///////// is there a duplicate in an array
+function isDuplicated(arr){
+  let sorted = arr.sort((a, b) => {
+    return a - b;
+  })
+
+  for(let i = 0; i < arr.length; i++){
+    if( arr[i] === arr[i + 1]){
+      return true
+    }else{
+      return false
+    }
+  }
+
+}
+
