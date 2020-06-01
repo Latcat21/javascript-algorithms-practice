@@ -209,3 +209,28 @@ function isDuplicated(arr){
 
 }
 
+///////// digit sum ('2 apples, 12 oranges') === 14
+
+function digitSum(str){
+  const nums = str.match(/\d+/g);
+
+  let newStr = nums.join('+');
+
+  return eval(newStr)
+
+}
+
+// solution 2
+function sumDigits(str){
+  const nums = str.match(/\d+/g) || [];
+
+  let sum = 0;
+
+  nums.forEach((num) => {
+    sum += parseInt(num);
+  })
+
+ return sum
+}
+
+
