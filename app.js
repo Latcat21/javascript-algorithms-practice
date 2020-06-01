@@ -154,6 +154,7 @@ function isDigit(str){
 
 
 ////////////////  VALID TIME ///////////////////
+
 function validTime(str){
   let newArr = str.split(':');
   let firstHalf = parseInt(newArr.slice(0,1))
@@ -164,9 +165,39 @@ function validTime(str){
   }else{
     return false
   }
+
+ 
   
  
 
 }
 
-console.log(validTime('22:00'));
+//// solution 2
+
+function isValidTime(time){
+  let timeArray = time.split(':');
+  
+  if(Number(timeArray[0]) > 23){
+    return false;
+  }else if(Number(timeArray[1]) > 59){
+    return true
+  }
+
+  return true;
+}
+
+
+function missingNum(arr){
+  const numberArray = arr.sort((num1, num2) => {
+    return num1 - num2;
+  });
+  
+  for( let i = 0; i < numberArray.length; i++){
+    if(i !== numberArray[i]){
+      return i
+    }
+  }
+ 
+}
+
+console.log(missingNum([0,3,5,8,4,6,1,9,7]));
