@@ -339,4 +339,14 @@ function uniqueValues(arr1, arr2){
 
   
 }
-console.log(uniqueValues([1,2,3,5], [1,2,3,4,5]))
+/// add up digits (29) = 11
+function addDigits(num){
+  let numArr = num.toString().split('')
+  let sum = 0;
+  for(let i = 0; i < numArr.length; i++){
+    sum += parseInt(numArr[i])
+  }
+  return sum
+ 
+}
+console.log(addDigits(29))
