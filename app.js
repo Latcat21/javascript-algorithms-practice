@@ -281,4 +281,62 @@ function stringSpacer(str){
 
   return stringArray.join('').trim('')
 }
-console.log(stringSpacer('CodingGodDoesWorkSon'))
+
+/////////// sum of differences [10,5] = 45
+function sumOfDifferences(arr){
+
+  let max = Math.max(...arr)
+  let min = Math.min(...arr)
+  
+  let sumArr = []
+  
+  for(let i = min; i <= max; i++){
+    sumArr.push(i)
+  }
+
+  let final = sumArr.reduce((a, b) =>{
+    return a + b;
+  })
+  return final
+  }
+
+
+  // simpler solution 2
+function sumAll(numArray){
+  const min = Math.min(...numArray);
+  const max = Math.max(...numArray);
+
+  let sum = 0;
+
+  for(let i = min; i <= max; i++){
+    sum += 1
+  }
+  return sum;
+}
+
+
+
+
+/// unique value
+
+function uniqueValues(arr1, arr2){
+ let uniqueArray = [];
+
+ for(let val of arr1){
+   if(!arr2.includes(val) && !uniqueArray.includes(val)){
+     uniqueArray.push(val)
+   }
+ }
+
+ for(let val of arr2){
+  if(!arr1.includes(val) && !uniqueArray.includes(val) ){
+    uniqueArray.push(val)
+  }
+}
+
+
+ return uniqueArray;
+
+  
+}
+console.log(uniqueValues([1,2,3,5], [1,2,3,4,5]))
