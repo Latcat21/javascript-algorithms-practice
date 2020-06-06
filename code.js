@@ -64,3 +64,14 @@ function sortByLength(arr){
   });
   return sorted;
 }
+
+function confirmEnding(str1, str2){
+  let ending = str1.substr(str1.length - str2.length);
+  if(ending === str2){
+    return true;
+  }else{
+    return false;
+  }
+
+}
+console.log(confirmEnding("Abstraction", "action"))
