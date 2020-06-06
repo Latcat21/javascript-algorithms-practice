@@ -29,4 +29,29 @@ function sumOfTwo(a, b, v){
 
  }
 
-console.log(sumOfTwo([1, 2, 3],[10, 20, 30, 40], 42 ));
+/*
+Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
+
+Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
+
+**Example**
+-   largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]) returns [27, 5, 39, 1001];
+
+*/
+
+  function largestOfFour(nums){
+
+    const highestNumber = [];
+
+    for(let numberGroup of nums){
+      let largest = 0;
+      for(let number of numberGroup){
+        largest = largest < number ? number : largest;
+      }
+      highestNumber.push(largest)
+    }
+
+    return highestNumber;
+
+  }
+console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
